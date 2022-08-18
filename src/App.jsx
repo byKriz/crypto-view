@@ -1,10 +1,10 @@
+import {ThemeProvider} from './context/ThemeContext'
+
 function App() {
   return (
-    <div className="App">
-      <h1 className=" text-center font-bold text-4xl text-zinc-600">
-        Holo world!
-      </h1>
-    </div>
+    <ThemeProvider>
+
+    </ThemeProvider>
   );
 }
 
