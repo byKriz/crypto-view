@@ -4,7 +4,7 @@ import { CoinSearch } from '../components/CoinSearch'
 export const Home = ({coins}) => {
   return (
     <div>
-      <CoinSearch />
+      <CoinSearch coins={coins}/>
     </div>
   )
 }

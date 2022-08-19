@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     axios.get(url).then((response) => {
       setCoins(response.data)
-      console.log(response.data)
+      // console.log(response.data)
     })
   }, [url])
 
