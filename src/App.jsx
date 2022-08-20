@@ -18,7 +18,7 @@ function App() {
       setCoins(response.data)
       // console.log(response.data)
     })
-  }, [url])
+  }, [])
 
   return (
     <ThemeProvider>
