@@ -7,6 +7,7 @@ import { SingIn } from "./routes/SingIn";
 import { SingUp } from "./routes/SingUp";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { CoinPage } from "./containers/CoinPage";
 
 function App() {
   const [coins, setCoins] = useState([]);
@@ -28,6 +29,10 @@ function App() {
         <Route path="/singin" element={<SingIn />} />
         <Route path="/singup" element={<SingUp />} />
         <Route path="/account" element={<Account />} />
+        {/* creando un link dinamico */}
+        <Route path="/coin/:coinId" element={<CoinPage />}>
+          <Route path=":coinId"/>
+        </Route>
       </Routes>
     </ThemeProvider>
   );
