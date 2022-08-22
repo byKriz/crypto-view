@@ -30,7 +30,7 @@ export const CoinSearch = ({ coins }) => {
             <th>Price</th>
             <th>% Change 24h</th>
             <th className="hidden md:table-cell">Volume</th>
-            <th className="hidden md:table-cell">MarketCap</th>
+            <th className="hidden sm:table-cell">MarketCap</th>
             <th>Last 7 days</th>
           </tr>
         </thead>
