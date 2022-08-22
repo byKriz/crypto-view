@@ -1,5 +1,5 @@
 import React from 'react'
-import { CoinSearch } from '../components/CoinSearch'
+import { CoinSearch } from '../containers/CoinSearch'
 
 export const Home = ({coins}) => {
   return (

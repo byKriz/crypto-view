@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CoinIteam } from "./CoinIteam";
+import { CoinIteam } from "../components/CoinIteam";
 
 export const CoinSearch = ({ coins }) => {
   const [searchText, setSearchText] = useState("");
