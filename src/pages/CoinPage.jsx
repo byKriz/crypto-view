@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Sparklines, SparklinesLine } from "react-sparklines";
 import { FaFacebook, FaGithub, FaReddit, FaTwitter } from "react-icons/fa";
+import { useParams } from "react-router-dom";
 import DOMPurify from "dompurify";
 import axios from "axios";
 
 export const CoinPage = () => {
   const [coin, setCoin] = useState({});
-  const url =
-    "https://api.coingecko.com/api/v3/coins/bitcoin?localization=false&sparkline=true";
+  const params = useParams() //creando el link dinamico gracias al endpoint en App.js de /:coinId
+
+  const url = `https://api.coingecko.com/api/v3/coins/${params.coinId}?localization=false&sparkline=true`;
 
   useEffect(() => {
     axios.get(url).then((response) => {
