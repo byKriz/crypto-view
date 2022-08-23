@@ -7,7 +7,7 @@ import { SingIn } from "./routes/SingIn";
 import { SingUp } from "./routes/SingUp";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { CoinPage } from "./containers/CoinPage";
+import { CoinPage } from "./pages/CoinPage";
 
 function App() {
   const [coins, setCoins] = useState([]);
