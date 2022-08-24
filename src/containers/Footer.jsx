@@ -5,8 +5,8 @@ import { FaFacebook, FaGithub, FaTiktok, FaTwitter } from "react-icons/fa";
 
 export const Footer = () => {
   return (
-    <footer>
-      <div>
+    <footer className="rounded-div mt-8 pt-8 text-primary">
+      <div className="grid md:grid-cols-2">
         <div>
           <div>
             <h2>Support</h2>
