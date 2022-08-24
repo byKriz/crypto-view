@@ -8,6 +8,7 @@ import { SingUp } from "./routes/SingUp";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { CoinPage } from "./pages/CoinPage";
+import { Footer } from "./containers/Footer";
 
 function App() {
   const [coins, setCoins] = useState([]);
@@ -34,6 +35,7 @@ function App() {
           <Route path=":coinId"/>
         </Route>
       </Routes>
+      <Footer />
     </ThemeProvider>
   );
 }
