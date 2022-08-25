@@ -27,8 +27,8 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home coins={coins}/>} />
-        <Route path="/singin" element={<SingIn />} />
-        <Route path="/singup" element={<SingUp />} />
+        <Route path="/signin" element={<SingIn />} />
+        <Route path="/signup" element={<SingUp />} />
         <Route path="/account" element={<Account />} />
         {/* creando un link dinamico */}
         <Route path="/coin/:coinId" element={<CoinPage />}>
