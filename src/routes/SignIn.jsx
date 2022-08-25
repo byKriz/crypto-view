@@ -11,22 +11,35 @@ export const SignIn = () => {
           <div className="my-4">
             <label>Email</label>
             <div className="my-2 w-full relative rounded-2xl shadow-xl">
-              <input className="w-full p-2 bg-primary border border-input rounded-2xl" type="email" placeholder="Your email" />
-              <AiOutlineMail className="absolute right-2 top-3 text-gray-400"/>
+              <input
+                className="w-full p-2 bg-primary border border-input rounded-2xl"
+                type="email"
+                placeholder="Your email"
+              />
+              <AiOutlineMail className="absolute right-2 top-3 text-gray-400" />
             </div>
           </div>
           <div className="my-4">
             <label>Password</label>
             <div className="my-2 w-full relative rounded-2xl shadow-xl">
-              <input className="w-full p-2 bg-primary border border-input rounded-2xl" type="password" placeholder="Your password" />
-              <AiFillLock className="absolute right-2 top-3 text-gray-400"/>
+              <input
+                className="w-full p-2 bg-primary border border-input rounded-2xl"
+                type="password"
+                placeholder="Your password"
+              />
+              <AiFillLock className="absolute right-2 top-3 text-gray-400" />
             </div>
           </div>
-          <button className="w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl">Sign in</button>
+          <button className="w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl">
+            Sign in
+          </button>
         </form>
         <p className="my-4">
-          Don't have a account? 
-          <Link to="/signup" className="text-accent"> Sign Up</Link>
+          Don't have a account?
+          <Link to="/signup" className="text-accent">
+            {" "}
+            Sign Up
+          </Link>
         </p>
       </div>
     </div>
