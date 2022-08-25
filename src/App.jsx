@@ -3,8 +3,8 @@ import { NavBar } from "./containers/NavBar";
 import { ThemeProvider } from "./context/ThemeContext";
 import { Account } from "./routes/Account";
 import { Home } from "./routes/Home";
-import { SingIn } from "./routes/SingIn";
-import { SingUp } from "./routes/SingUp";
+import { SingIn } from "./routes/SignIn";
+import { SingUp } from "./routes/SignUp";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { CoinPage } from "./pages/CoinPage";
@@ -27,8 +27,8 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home coins={coins}/>} />
-        <Route path="/signin" element={<SingIn />} />
-        <Route path="/signup" element={<SingUp />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/account" element={<Account />} />
         {/* creando un link dinamico */}
         <Route path="/coin/:coinId" element={<CoinPage />}>
