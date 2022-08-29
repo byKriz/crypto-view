@@ -27,7 +27,17 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   // creando el cierre de sesion de un usuario
-  const logOut = () => signOut(auth);
+  const logout = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        console.log("Sign-out successful.");
+      })
+      .catch((error) => {
+        // An error happened.
+        console.log(error);
+      });
+  };
 
   useEffect(() => {
     const unsuscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -39,7 +49,7 @@ export const AuthContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ signUp, signIn, logOut, user }}>
+    <UserContext.Provider value={{ signUp, signIn, logout, user }}>
       {children}
     </UserContext.Provider>
   );
