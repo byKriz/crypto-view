@@ -28,15 +28,7 @@ export const AuthContextProvider = ({ children }) => {
 
   // creando el cierre de sesion de un usuario
   const logout = () => {
-    signOut(auth)
-      .then(() => {
-        // Sign-out successful.
-        console.log("Sign-out successful.");
-      })
-      .catch((error) => {
-        // An error happened.
-        console.log(error);
-      });
+    signOut(auth);
   };
 
   useEffect(() => {

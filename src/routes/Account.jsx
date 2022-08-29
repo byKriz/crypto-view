@@ -10,9 +10,8 @@ export const Account = () => {
   const handleSignOut = async (e) => {
     e.preventDefault();
     try {
-      await logout;
-      // console.log("adios");
-      // navigate("/");
+      await logout();
+      navigate("/");
     } catch (e) {
       console.log(e.message);
     }
