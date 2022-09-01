@@ -42,7 +42,7 @@ export const NavBar = () => {
       </div> */}
 
       {user?.email ? (
-        <div>
+        <div className="hidden md:block">
           <Link to="/account" className="p-4 hover:text-accent">
             Account
           </Link>
@@ -84,25 +84,38 @@ export const NavBar = () => {
           <li className="border-b py-6">
             <Link to="/">Home</Link>
           </li>
-          <li className="border-b py-6">
-            <Link to="/">Account</Link>
-          </li>
+          {user?.email ? (
+            <li onClick={handleNav} className="border-b py-6">
+              <Link to="/">Account</Link>
+            </li>
+          ) : null}
           <li className="py-6">
             <ThemeToggle />
           </li>
         </ul>
-        <div className="flex flex-col w-full p-4">
-          <Link to="/signin">
-            <button className="w-full my-2 p-3 bg-primary text-primary border border-secondary rounded-2xl shadow-xl">
-              Sing In
+        {user?.email ? (
+          <div className="flex flex-col w-full p-4">
+            <button
+              onClick={handleSignOut}
+              className="w-full my-2 p-3 border border-secondary rounded-2xl shadow-xl bg-red-500 text-white"
+            >
+              Sign Out
             </button>
-          </Link>
-          <Link to="/signup">
-            <button className="w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl">
-              Sing Up
-            </button>
-          </Link>
-        </div>
+          </div>
+        ) : (
+          <div className="flex flex-col w-full p-4">
+            <Link to="/signin" onClick={handleNav}>
+              <button className="w-full my-2 p-3 bg-primary text-primary border border-secondary rounded-2xl shadow-xl">
+                Sing In
+              </button>
+            </Link>
+            <Link to="/signup" onClick={handleNav}>
+              <button className="w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl">
+                Sing Up
+              </button>
+            </Link>
+          </div>
+        )}
       </div>
     </nav>
   );
