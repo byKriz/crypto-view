@@ -21,6 +21,7 @@ export const CoinIteam = ({ coin }) => {
       return <AiOutlineStar />;
     }
   };
+  
 
   // La lógica para guardar la moneda
   const coinPath = doc(db, "users", `${user?.email}`);
