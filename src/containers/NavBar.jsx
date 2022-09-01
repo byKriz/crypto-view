@@ -81,7 +81,7 @@ export const NavBar = () => {
         }
       >
         <ul className="w-full p-4">
-          <li className="border-b py-6">
+          <li onClick={handleNav} className="border-b py-6">
             <Link to="/">Home</Link>
           </li>
           {user?.email ? (
