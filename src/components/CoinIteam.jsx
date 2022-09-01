@@ -1,13 +1,56 @@
-import React from "react";
-import { AiOutlineStar } from "react-icons/ai";
+import React, { useState } from "react";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { Sparklines, SparklinesLine } from "react-sparklines";
 import { Link } from "react-router-dom";
+import { UserAuth } from "../context/AuthContext";
+import { db } from "../firebase";
+import { arrayUnion, doc, updateDoc } from "firebase/firestore";
 
 export const CoinIteam = ({ coin }) => {
+  const [savedCoin, setSavedCoin] = useState(false);
+  const [starState, setStarState] = useState(false);
+  const { user } = UserAuth();
+
+  // Logica para hover de la estrella
+  const handleStarOver = () => setStarState(true);
+  const handleStarOut = () => setStarState(!starState);
+  const checkStar = () => {
+    if (savedCoin === true || starState === true) {
+      return <AiFillStar />;
+    } else {
+      return <AiOutlineStar />;
+    }
+  };
+
+  // La lógica para guardar la moneda
+  const coinPath = doc(db, "users", `${user?.email}`);
+  const saveCoin = async () => {
+    if (user?.email) {
+      setSavedCoin(true);
+      await updateDoc(coinPath, {
+        watchList: arrayUnion({
+          id: coin.id,
+          name: coin.name,
+          image: coin.image,
+          rank: coin.market_cap_rank,
+          symbol: coin.symbol.toUpperCase(),
+        }),
+      });
+    } else {
+      alert("Please sign in to save a coin in your watch list");
+    }
+  };
+
   return (
     <tr className="h-[80px] border-b overflow-hidden">
-      <td>
-        <AiOutlineStar />
+      <td
+        onMouseOver={handleStarOver}
+        onMouseOut={handleStarOut}
+        onClick={saveCoin}
+      >
+        {/* {starState ? <AiFillStar /> : <AiOutlineStar />} */}
+        {/* {savedCoin ? <AiFillStar /> : <AiOutlineStar />} */}
+        {checkStar()}
       </td>
       <td>{coin.market_cap_rank}</td>
       <td>
